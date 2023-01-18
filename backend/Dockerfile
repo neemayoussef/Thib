@@ -16,8 +16,8 @@ ENV PORT $PORT
 EXPOSE $PORT 9229 9230
 
 COPY package.json /code/package.json
-COPY package-lock.json /code/package-lock.json
-RUN npm ci
+#COPY package-lock.json /code/package-lock.json
+#RUN npm ci
 
 # check every 30s to ensure this service returns HTTP 200
 HEALTHCHECK --interval=30s \
@@ -32,11 +32,11 @@ COPY . /code
 # I still can't come up with a good production way to run with npm and graceful shutdown
 CMD [ "node", "src/index.js" ]
 
-FROM development as dev-envs
-RUN <<EOF
-apt update
-apt install -y --no-install-recommends git
-EOF
+#FROM development as dev-envs
+#RUN <<EOF
+#apt update
+#apt install -y --no-install-recommends git
+#EOF
 
 # install Docker tools (cli, buildx, compose)
 #COPY --from=gloursdocker/docker / /
