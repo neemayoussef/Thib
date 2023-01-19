@@ -1,2 +1,0 @@
-# Thib
-Group project 
