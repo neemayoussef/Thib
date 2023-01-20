@@ -1,0 +1,13 @@
+version: '3'
+services:
+  thib-backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    image: thib-backend-image
+    container_name: thib-backend
+    restart: unless-stopped
+    ports:
+      - 80:8080
+    volumes:
+      - ./backend:/usr/app
