@@ -2,20 +2,23 @@
   "name": "tib",
   "version": "1.0.0",
   "description": "",
-  "main": "index.html",
+  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "SEE LICENSE IN LICENSE",
   "dependencies": {
     "@vitejs/plugin-react": "^3.0.1",
+    "autoprefixer": "^10.4.13",
     "boardgame.io": "^0.50.2",
+    "postcss": "^8.4.21",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-router-dom": "^6.7.0",
     "vite": "^4.0.4"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.2.4"
   }
 }
