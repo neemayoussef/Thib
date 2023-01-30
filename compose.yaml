@@ -12,7 +12,6 @@ services:
     volumes:
       - ./backend/src:/code/src:ro
       - ./backend/package.json:/code/package.json
-      - ./backend/vite.config.ts:/code/vite.config.ts
     networks:
       - public
   frontend:
@@ -24,6 +23,7 @@ services:
     volumes:
       - ./frontend/src:/code/src
       - /code/node_modules
+      - ./frontend/vite.config.ts:/code/vite.config.ts
     networks:
       - public
     depends_on:
