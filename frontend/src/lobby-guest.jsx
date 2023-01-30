@@ -52,7 +52,7 @@ const lobbyGuest = () => {
         <div id="leftside" className="w-[25%] h-full flex flex-col items-center justify-center">
           <div id="lefttop" className="w-full h-[20%] flex items-center justify-center">           
             <div id="twologos" className="w-full h-full flex items-center justify-center">
-              <img id="smlogomed" className="w-[30%] h-auto" src={require("../img/logomed.png")} alt="funny medusa logo"/>
+              <img id="smlogomed" className="w-[30%] h-auto" src={("../img/logomed.png")} alt="funny medusa logo"/>
               <div id="smashun" className="">
                 <h1 id="smlogothib" className="font-audiowide">THIB</h1>
               </div>

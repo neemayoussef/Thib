@@ -5,7 +5,7 @@ const home = () => {
     <>
       <div id="glassbox" className="w-[30%] h-[80%] flex flex-col items-center justify-center">
         <div id="logofull" className="w-full h-[60%] mt-[5%] flex flex-col items-center justify-start font-audiowide">
-          <img id="logomed" className="h-[70%]" src={require("../img/logomed.png")} alt="funny medusa logo"/>
+          <img id="logomed" className="h-[70%]" src={("../img/logomed.png")} alt="funny medusa logo"/>
           <div id="ashun" className="w-full h-[30%] flex flex-col items-center justify-center">
             <h1 id="logothib" className="">
               THIB
