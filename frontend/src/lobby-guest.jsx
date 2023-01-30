@@ -79,7 +79,7 @@ const lobbyGuest = () => {
 
                 <div id="container" className={!isClicked ? "w-1/3 h-full flex items-center justify-end" : "collapse w-[0%] h-[0%]"}>
                     <div id="btn" className="w-[75%] h-[60%]">
-                        <Link className="w-full h-full"  to="" onClick={onSubmit}>
+                        <Link className="w-full h-full"  to="#" onClick={onSubmit}>
                             BACK
                         </Link>
                     </div>
@@ -87,7 +87,7 @@ const lobbyGuest = () => {
 
                 <div id="container" className={isClicked ? "w-1/3 h-full flex items-center justify-end" : "collapse w-[0%] h-[0%]"}>
                     <div id="btn" className="w-[75%] h-[60%]">
-                        <Link className="w-full h-full"  to="" onClick={handleClick}>
+                        <Link className="w-full h-full"  to="#" onClick={handleClick}>
                             BACK
                         </Link>
                     </div>
