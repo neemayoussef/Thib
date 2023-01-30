@@ -79,7 +79,7 @@ const lobby = () => {
 
                 <div id="container" className={!isClicked ? "w-1/3 h-full flex items-center justify-end" : "collapse w-[0%] h-[0%]"}>
                     <div id="btn" className="w-[75%] h-[60%]">
-                        <Link className="w-full h-full"  to="" onClick={onSubmit}>
+                        <Link className="w-full h-full"  to="#" onClick={onSubmit}>
                             BACK
                         </Link>
                     </div>
@@ -87,7 +87,7 @@ const lobby = () => {
 
                 <div id="container" className={isClicked ? "w-1/3 h-full flex items-center justify-end" : "collapse w-[0%] h-[0%]"}>
                     <div id="btn" className="w-[75%] h-[60%]">
-                        <Link className="w-full h-full"  to="" onClick={handleClick}>
+                        <Link className="w-full h-full"  to="#" onClick={handleClick}>
                             BACK
                         </Link>
                     </div>
@@ -96,7 +96,7 @@ const lobby = () => {
 
                 <div id="container" className="w-1/3 h-full flex items-center justify-center">
                     <div id="btn" className="w-[75%] h-[60%]">
-                        <Link className="w-full h-full btninv"  to="" onClick={() => copy("http://localhost:1234/invite")}>
+                        <Link className="w-full h-full btninv" to="#" onClick={() => copy("http://localhost:1234/invite")}>
                             INVITE
                         </Link>
                     </div>
@@ -104,7 +104,7 @@ const lobby = () => {
 
                 <div id="container" className="w-1/3 h-full flex items-center justify-start">
                     <div id="btn" className="w-[75%] h-[60%]">
-                        <Link className="w-full h-full" to="">
+                        <Link className="w-full h-full" to="#">
                             START
                         </Link>
                     </div>
