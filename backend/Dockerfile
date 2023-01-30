@@ -25,20 +25,3 @@ RUN npm ci
 
 # copy in our source code last, as it changes the most
 COPY . /code
-
-# RUN ["vite", "build"]
-
-# if you want to use npm start instead, then use `docker run --init in production`
-# so that signals are passed properly. Note the code in index.js is needed to catch Docker signals
-# using node here is still more graceful stopping then npm with --init afaik
-# I still can't come up with a good production way to run with npm and graceful shutdown
-CMD [ "node", "index.html" ]
-
-#FROM development as dev-envs
-#RUN <<EOF
-#apt update
-#apt install -y --no-install-recommends git
-#EOF
-
-# install Docker tools (cli, buildx, compose)
-#COPY --from=gloursdocker/docker / /
