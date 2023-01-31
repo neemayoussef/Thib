@@ -8,25 +8,24 @@ services:
     environment:
       - NODE_ENV=development
     ports:
-      - 9230:9230
+      - 8080
+      - 8081
     volumes:
       - ./backend/src:/code/src:ro
       - ./backend/package.json:/code/package.json
     networks:
-      - public
+      public:
   frontend:
     build:
       context: frontend
       target: development
     ports:
-      - 3000:3000
+      - "8127:8127"
     volumes:
       - ./frontend/src:/code/src
       - /code/node_modules
       - ./frontend/vite.config.ts:/code/vite.config.ts
     networks:
       - public
-    depends_on:
-      - backend
 networks:
   public:

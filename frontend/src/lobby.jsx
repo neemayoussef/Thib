@@ -46,6 +46,15 @@ const lobby = () => {
     setIsClickedGame2(!isClickedGame2);
   };
 
+  const getLobbyData = () => {
+
+    fetch('http://localhost:8081/games')
+      // .then((response) => response.json())
+      .then((data) => console.log(data));
+  };
+
+  getLobbyData();
+
   return (
     <>
       <h5> hey </h5>

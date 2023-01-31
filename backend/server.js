@@ -6,14 +6,14 @@ const server = Server({
 
   origins: [
     // Allow your game site to connect.
-    'https://www.example.com',
+    // 'http://172.[16-32].\d+.\d+',
     // Allow localhost to connect, except when NODE_ENV is 'production'.
     Origins.LOCALHOST_IN_DEVELOPMENT
   ],
 });
 
 const lobbyConfig = {
-  apiPort: 8080,
+  apiPort: 8081,
   apiCallback: () => console.log('Running Lobby API on port 8080...'),
 };
 
@@ -29,4 +29,4 @@ server.router.use('/games/:name/create', async (ctx, next) => {
   next();
 });
 
-server.run({ port: 8000, lobbyConfig }, () => console.log("server running..."));
+server.run({ port: 8080, lobbyConfig }, () => console.log("server running..."));

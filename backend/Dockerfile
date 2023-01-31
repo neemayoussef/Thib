@@ -5,15 +5,16 @@ FROM node:lts AS development
 
 # set our node environment, either development or production
 # defaults to production, compose overrides this to development on build and run
-ARG NODE_ENV=production
+ARG NODE_ENV=development
 ENV NODE_ENV $NODE_ENV
 
 WORKDIR /code
 
 # default to port 80 for node, and 9229 and 9230 (tests) for debug
-ARG PORT=80
-ENV PORT $PORT
-EXPOSE $PORT 9229 9230
+# ARG PORT=80809
+# ENV PORT $PORT
+# EXPOSE $PORT 8080 8081
+EXPOSE 8080 8081
 
 COPY package.json /code/package.json
 COPY package-lock.json /code/package-lock.json
