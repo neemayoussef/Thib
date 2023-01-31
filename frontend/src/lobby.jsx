@@ -48,6 +48,7 @@ const lobby = () => {
 
   return (
     <>
+      <h5> hey </h5>
       <div id="lobby" className="w-[85%] h-[80%] flex items-center justify-center gap-[0.5%] mx-[0.25%]">
         <div id="leftside" className="w-[25%] h-full flex flex-col items-center justify-center">
           <div id="lefttop" className="w-full h-[20%] flex items-center justify-center">           
