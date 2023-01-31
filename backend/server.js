@@ -12,6 +12,12 @@ const server = Server({
   ],
 });
 
+const lobbyConfig = {
+  apiPort: 8080,
+  apiCallback: () => console.log('Running Lobby API on port 8080...'),
+};
+
+
 server.router.get('/customend', (ctx, next) => {
   ctx.body = 'Hello World!';
 });
@@ -23,4 +29,4 @@ server.router.use('/games/:name/create', async (ctx, next) => {
   next();
 });
 
-server.run(8000, () => console.log("server running..."));
+server.run({ port: 8000, lobbyConfig }, () => console.log("server running..."));
