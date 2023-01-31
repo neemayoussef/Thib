@@ -16,5 +16,4 @@ COPY package.json /code/package.json
 # COPY package-lock.json /code/package-lock.json
 RUN npm i
 
-
 COPY . /code

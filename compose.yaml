@@ -2,29 +2,36 @@ services:
   backend:
     build:
       args:
-      - NODE_ENV=development
+        - NODE_ENV=development
       context: backend
       target: development
+      dockerfile: ./Dockerfile
     environment:
       - NODE_ENV=development
     ports:
-      - 8080
-      - 8081
+      - "8080:8080"
+      - "8081:8181"
     volumes:
       - ./backend/src:/code/src:ro
       - ./backend/package.json:/code/package.json
+    command: ['sh', '-cx', "npm run dev"]
     networks:
       public:
   frontend:
+    image: node:lts
     build:
       context: frontend
       target: development
+      dockerfile: ./Dockerfile
     ports:
       - "8127:8127"
     volumes:
       - ./frontend/src:/code/src
       - /code/node_modules
       - ./frontend/vite.config.ts:/code/vite.config.ts
+    depends_on:
+      - backend
+    command: ['sh', '-cx', "npm run dev"]
     networks:
       - public
 networks:
