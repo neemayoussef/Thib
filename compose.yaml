@@ -1,37 +1,40 @@
 services:
   backend:
-    build:
-      args:
-        - NODE_ENV=development
-      context: backend
-      target: development
-      dockerfile: ./Dockerfile
+    image: node:lts
+    # build:
+    #   args:
+    #     - NODE_ENV=development
     environment:
       - NODE_ENV=development
-    ports:
-      - "8080:8080"
-      - "8081:8181"
+    # ports:
+    #   - "8080:8080"
+    #   - "8081:8181"
     volumes:
-      - ./backend/src:/code/src:ro
-      - ./backend/package.json:/code/package.json
-    command: ['sh', '-cx', "npm run dev"]
+      - ./backend/src:/src
+      - ./backend/package.json:/package.json
+      - ./backend/server.js:/server.js
+    command:
+      ['sh', '-cx', "npm i && npm run dev"]
     networks:
       public:
   frontend:
     image: node:lts
-    build:
-      context: frontend
-      target: development
-      dockerfile: ./Dockerfile
+    environment:
+      - NODE_OPTIONS='--max-old-space-size=4096' 
+    # build:
+      # context: frontend
+      # target: development
     ports:
       - "8127:8127"
     volumes:
-      - ./frontend/src:/code/src
-      - /code/node_modules
-      - ./frontend/vite.config.ts:/code/vite.config.ts
+      - ./frontend/src:/src
+      - ./frontend/vite.config.ts:/vite.config.ts
+      - ./frontend/tailwind.config.js:/tailwind.config.js
+      - ./frontend/index.html:/index.html
+      - ./frontend/package.json:/package.json
     depends_on:
       - backend
-    command: ['sh', '-cx', "npm run dev"]
+    command: ['sh', '-cx', "export && npm i && npm run build && npm run dev"]
     networks:
       - public
 networks:
