@@ -6,7 +6,8 @@ export default defineConfig({
     resolve: { alias: { '@': '/src' } },
     plugins: [react()],
     server: {
-        host: false, 
-        port: 8127
+        host: true, 
+        port: 8127,
+        hmr: false
     }
 })
