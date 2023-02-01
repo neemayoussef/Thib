@@ -20,7 +20,7 @@ services:
   frontend:
     image: node:lts
     environment:
-      - NODE_OPTIONS='--max-old-space-size=4096' 
+      - NODE_OPTIONS=--max-old-space-size=6000
     # build:
       # context: frontend
       # target: development
