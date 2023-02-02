@@ -6,5 +6,5 @@
 // const server = 'https://thib.herokuapp.com/';
 // const importedGames = [{game: TicTacToe, board: TicTacToeBoard}]
 
-// export default ()=> (
+
 
