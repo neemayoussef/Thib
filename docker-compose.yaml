@@ -20,22 +20,21 @@ services:
       public:
   frontend:
     image: node:lts
-    environment:
-      - NODE_OPTIONS=--max-old-space-size=6000
+    working_dir: /code
     # build:
       # context: frontend
       # target: development
     ports:
       - "8127:8127"
     volumes:
-      - ./frontend/src:/src
-      - ./frontend/vite.config.ts:/vite.config.ts
-      - ./frontend/tailwind.config.js:/tailwind.config.js
-      - ./frontend/index.html:/index.html
-      - ./frontend/package.json:/package.json
-    depends_on:
+      - ./frontend/src:/code/src
+      - ./frontend/vite.config.ts:/code/vite.config.ts
+      - ./frontend/tailwind.config.js:/code/tailwind.config.js
+      - ./frontend/index.html:/code/index.html
+      - ./frontend/package.json:/code/package.json
+    depends_on: 
       - backend
-    command: ['sh', '-cx', "export && npm i && npm run build && npm run dev"]
+    command: ['sh', '-cx', "npm install && npm run build && npm run dev"]
     networks:
       - public
 networks:
